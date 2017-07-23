@@ -31,7 +31,7 @@ class AnimalsController < ApplicationController
   private
 
   def animal_params
-    params.permit(:author, :title, :content)
+    params.permit(:name, :species, :age)
   end
 
   def search_params
