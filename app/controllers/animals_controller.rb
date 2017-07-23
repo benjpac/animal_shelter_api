@@ -1,9 +1,9 @@
 class AnimalsController < ApplicationController
   def index
     @animals = Animal.all 
-    search_params(params).each do |key, value|
-      @animals = @animals.public_send(key, value) if value.present?
-    end
+    # search_params(params).each do |key, value|
+    #   @animals = @animals.public_send(key, value) if value.present?
+    # end
     json_response(@animals)
   end
 
@@ -36,4 +36,5 @@ class AnimalsController < ApplicationController
 
   def search_params
     params.slice(:name, :species, :age)
+  end
 end
